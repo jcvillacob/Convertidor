@@ -1,4 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-body{
-    background-image: url(./assets/fondo.jpg);
+body {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(./assets/bosque.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
 }
