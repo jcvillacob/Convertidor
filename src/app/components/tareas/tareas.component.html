@@ -9,10 +9,14 @@
                 <h6>No hay tareas para mostrar... Añade una tarea</h6>
             </div>
             <ul class="list-group">
-              <li *ngFor="let tarea of listTareas" class="list-group-item d-flex justify-content-between">
-                <span class="cursor"><i class="fa-regular fa-circle"></i></span>
+              <li *ngFor="let tarea of listTareas; let i = index" class="list-group-item d-flex justify-content-between">
+                <span class="cursor" (click)="actualizarTarea(tarea, i)">
+                  <i [class.text-success]='tarea.estado' [ngClass]="tarea.estado ? 'fa-solid fa-circle-check' : 'fa-regular fa-circle'"></i>
+                </span>
                 {{tarea.nombre}}
-                <span class="cursor text-danger"><i class="fa-solid fa-trash-can"></i></span>
+                <span class="cursor text-danger" (click)="eliminarTarea(i)">
+                  <i class="fa-solid fa-trash-can"></i>
+                </span>
               </li>
             </ul>
             

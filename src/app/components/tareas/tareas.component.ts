@@ -27,4 +27,12 @@ export class TareasComponent implements OnInit {
     // Resetear el formulario
     this.nombreTarea = '';
   }
+
+  eliminarTarea(i: number): void {
+    this.listTareas.splice(i, 1);
+  }
+
+  actualizarTarea(tarea: Tarea, i: number) {
+    this.listTareas[i].estado = !tarea.estado;
+  }
 }
